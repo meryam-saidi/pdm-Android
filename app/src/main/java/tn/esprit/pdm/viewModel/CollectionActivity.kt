@@ -43,8 +43,8 @@ class CollectionActivity : AppCompatActivity() {
         btnSchedule.setOnClickListener {
             val selectedSurplusFoodItem = spinnerPostTitles.selectedItem as? SurplusFoodItem
             if (selectedSurplusFoodItem != null) {
-                val surplusFoodId = selectedSurplusFoodItem.id
-                scheduleCollection(surplusFoodId)
+                //val surplusFoodId = selectedSurplusFoodItem.id
+                scheduleCollection()
             } else {
                 Toast.makeText(this, "No item selected", Toast.LENGTH_SHORT).show()
             }
@@ -81,24 +81,33 @@ class CollectionActivity : AppCompatActivity() {
         spinnerPostTitles.adapter = adapter
     }
 
-    private fun scheduleCollection(surplusFoodId: String) {
-        val startDate = "${datePickerStart.year}-${datePickerStart.month + 1}-${datePickerStart.dayOfMonth}"
-        val endDate = "${datePickerEnd.year}-${datePickerEnd.month + 1}-${datePickerEnd.dayOfMonth}"
-        val comment = commentView.text.toString()
+    private fun scheduleCollection() {
+        val selectedSurplusFoodItem = spinnerPostTitles.selectedItem as? SurplusFoodItem
+        if (selectedSurplusFoodItem != null) {
+            val foodType = selectedSurplusFoodItem.title
+            //val foodType = selectedSurplusFoodItem.foodType  // Assuming foodType is also needed
 
-        // Ici, vous utiliseriez `surplusFoodId` pour créer l'objet collection
-        val newCollection = Collection(
-            //surplusFoodId = "6660cd002639d12b336617f4",
-            requestorId = "6660c1783c9663264f09e91a", // Juste un exemple
-            startDate = startDate,
-            foodType= "",
-            title="Auto-Collection Details",
-            endDate = endDate,
-            comment = comment
-        )
+            val startDate = "${datePickerStart.year}-${datePickerStart.month + 1}-${datePickerStart.dayOfMonth}"
+            val endDate = "${datePickerEnd.year}-${datePickerEnd.month + 1}-${datePickerEnd.dayOfMonth}"
+            val comment = commentView.text.toString()
 
-        createCollection(newCollection)
+            // Assuming requestorId is obtained securely from user session or similar
+            val requestorId = "6660c1783c9663264f09e91a"
+
+            val newCollection = Collection(
+                foodType = foodType,
+                requestorId = requestorId,
+                startDate = startDate,
+                endDate = endDate,
+                comment = comment
+            )
+
+            createCollection(newCollection)
+        } else {
+            Toast.makeText(this, "No item selected", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
 
     private fun createCollection(collection: Collection) {

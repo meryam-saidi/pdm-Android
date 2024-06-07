@@ -19,4 +19,7 @@ interface UserApiService {
     @POST("collection")
     fun createCollection(@Body collection: Collection): Call<Collection>
 
+    @GET("collection")
+    fun getCollections(): Call<List<Collection>>
+
 }

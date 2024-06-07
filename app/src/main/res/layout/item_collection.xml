@@ -27,7 +27,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Title goes here"
+            tools:text="Collection Details"
             android:layout_marginBottom="3dp"/>
 
         <TextView
