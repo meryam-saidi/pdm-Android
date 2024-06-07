@@ -1,9 +1,10 @@
 package tn.esprit.pdm.viewModel
 
 data class Collection(
-    var surplusFoodId: String,
+    var title: String,
+    var foodType: String,
     var requestorId: String,
-    var collectionDate: String,
-    //var collectionTime: String,
+    var startDate: String,
+    var endDate: String,
     var comment: String
 )

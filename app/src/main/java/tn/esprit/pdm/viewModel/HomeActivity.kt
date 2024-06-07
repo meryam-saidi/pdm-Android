@@ -3,11 +3,8 @@ package tn.esprit.pdm.viewModel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,8 +13,6 @@ import retrofit2.Response
 import tn.esprit.pdm.R
 import tn.esprit.pdm.network.RetrofitClient
 import tn.esprit.pdm.network.UserApiService
-import tn.esprit.pdm.network.model.LoginRequest
-import tn.esprit.pdm.network.model.UserResponse
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var apiService: UserApiService
@@ -84,9 +79,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.itemCalendar -> {
-                val intentToCalendarActivity = Intent(this@HomeActivity, CalendarActivity::class.java)
-                startActivity(intentToCalendarActivity)
+            R.id.calendar -> {
+                val intentToCollectionActivity = Intent(this@HomeActivity, CollectionActivity::class.java)
+                startActivity(intentToCollectionActivity)
             }
             R.id.itemProfile -> {
 

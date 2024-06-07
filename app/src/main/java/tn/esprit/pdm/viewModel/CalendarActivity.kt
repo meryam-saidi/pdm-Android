@@ -95,8 +95,8 @@ class CalendarActivity : AppCompatActivity() {
 
         val comment = commentView.text.toString()
 
-        val newCollection = Collection(surplusFoodId, requestorId, collectionDate, comment)
-        createCollection(newCollection)
+        //val newCollection = Collection(surplusFoodId, requestorId, startDate, endDate, comment)
+        //createCollection(newCollection)
     }
 
     private fun createCollection(collection: Collection) {

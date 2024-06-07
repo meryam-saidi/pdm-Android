@@ -9,6 +9,5 @@ data class Post (
     var donor: String,
     var quantity: Int,
     var description: String,
-    //var expirationDate: Date,
-
+    //var expirationDate: String,
 )

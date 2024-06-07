@@ -16,15 +16,19 @@
         android:theme="@style/Theme.Pdm"
         tools:targetApi="31">
         <activity
+            android:name=".viewModel.HistoryActivity"
+            android:exported="false"
+            android:label="@string/history_activity_title"
+            android:parentActivityName=".viewModel.CollectionActivity"></activity>
+        <activity
+            android:name=".viewModel.CollectionActivity"
+            android:exported="true"
+            android:label="@string/collection_activity_title"
+            android:parentActivityName=".viewModel.HomeActivity"></activity>
+        <activity
             android:name=".viewModel.CalendarActivity"
-            android:parentActivityName=".viewModel.HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"
+            android:parentActivityName=".viewModel.HomeActivity"></activity>
         <activity
             android:name=".viewModel.HomeActivity"
             android:exported="false"
@@ -32,7 +36,11 @@
         <activity
             android:name=".viewModel.LoginActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
