@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/calendar_icon"
+        android:title="calendar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Profile" />
+    <item
+        android:id="@+id/itemSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Settings" />
+</menu>
