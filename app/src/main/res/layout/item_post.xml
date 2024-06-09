@@ -20,7 +20,7 @@
             android:id="@+id/imageFood"
             android:layout_width="100dp"
             android:layout_height="160dp"
-            tools:src="@drawable/food"
+            android:src="@drawable/food"
             android:scaleType="centerCrop"
             android:layout_margin="8dp" />
 
@@ -30,10 +30,8 @@
             android:layout_height="20dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="87dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
-            android:layout_toEndOf="@+id/tvTitle"
             android:src="@drawable/menu_item_icon" />
 
         <TextView

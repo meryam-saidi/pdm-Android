@@ -1,4 +1,4 @@
-package tn.esprit.pdm.viewModel
+package tn.esprit.pdm.network.model
 
 import java.util.Date
 

@@ -1,4 +1,4 @@
-package tn.esprit.pdm.viewModel
+package tn.esprit.pdm.network.model
 
 data class SurplusFoodItem(val id: String, val title: String) {
     override fun toString(): String {

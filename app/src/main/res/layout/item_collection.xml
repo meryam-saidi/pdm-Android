@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="188dp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
     android:padding="8dp"
     android:layout_margin="6dp"
@@ -12,130 +12,141 @@
     app:cardElevation="9dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_gravity="center">
+        android:layout_width="389dp"
+        android:layout_height="188dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp">
 
+        <TextView
+            android:id="@+id/firstView"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
 
         <TextView
             android:id="@+id/tvCollectionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/firstView"
+            android:text="Collection Details"
             android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:textColor="@color/brown"
             android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="Collection Details"
-            android:layout_marginBottom="3dp"/>
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/tvFoodType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCollectionTitle"
+            android:layout_toEndOf="@+id/firstView"
+            android:layout_marginBottom="3dp"
             android:text="Food Type: "
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginBottom="3dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvFoodTypeAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCollectionTitle"
+            android:layout_marginBottom="3dp"
             android:layout_toEndOf="@+id/tvFoodType"
             android:textColor="@color/white"
-            tools:text="donor name"
-            android:layout_marginBottom="3dp"/>
+            tools:text="food type" />
 
         <TextView
             android:id="@+id/tvStartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvFoodTypeAnswer"
+            android:layout_toEndOf="@+id/firstView"
+            android:layout_marginBottom="3dp"
             android:text="Start Date: "
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginBottom="3dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvStartDateAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvFoodTypeAnswer"
+            android:layout_marginBottom="3dp"
             android:layout_toEndOf="@+id/tvStartDate"
             android:textColor="@color/white"
-            tools:text="start date"
-            android:layout_marginBottom="3dp"/>
+            tools:text="start date" />
 
         <TextView
             android:id="@+id/tvEndDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvStartDate"
+            android:layout_toEndOf="@+id/firstView"
+            android:layout_marginBottom="3dp"
             android:text="End Date: "
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginBottom="3dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvEndDateAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvStartDateAnswer"
+            android:layout_marginBottom="3dp"
             android:layout_toEndOf="@+id/tvEndDate"
             android:textColor="@color/white"
-            tools:text="end date"
-            android:layout_marginBottom="3dp"/>
+            tools:text="end date" />
 
         <TextView
             android:id="@+id/tvComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEndDate"
+            android:layout_toEndOf="@+id/firstView"
+            android:layout_marginBottom="3dp"
             android:text="Comment: "
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginBottom="3dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvCommentAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEndDate"
+            android:layout_marginBottom="3dp"
             android:layout_toEndOf="@+id/tvComment"
             android:textColor="@color/white"
-            tools:text="comment left"
-            android:layout_marginBottom="3dp"/>
+            tools:text="comment left" />
 
-
-        <Button
-            android:id="@+id/btnUpdate"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_below="@id/tvCommentAnswer"
-            android:text="Update"
-            android:textColor="@color/beige"
-            android:layout_marginStart="145dp"
-            />
+            android:layout_marginLeft="160dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@id/btnCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvCommentAnswer"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
-            android:layout_toEndOf="@id/btnUpdate"
-            android:text="Cancel"
-            android:textColor="@color/beige"
-            android:textColorLink="@color/primary" />
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textColor="@color/beige" />
 
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
 
-
+            <Button
+                android:id="@id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textColor="@color/beige"
+                android:textColorLink="@color/primary" />
+        </LinearLayout>
 
     </RelativeLayout>
 

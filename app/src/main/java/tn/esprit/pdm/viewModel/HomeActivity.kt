@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Response
 import tn.esprit.pdm.R
+import tn.esprit.pdm.adapter.PostsAdapter
 import tn.esprit.pdm.network.RetrofitClient
 import tn.esprit.pdm.network.UserApiService
+import tn.esprit.pdm.network.model.Post
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var apiService: UserApiService
@@ -80,8 +82,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.calendar -> {
-                val intentToCollectionActivity = Intent(this@HomeActivity, CollectionActivity::class.java)
-                startActivity(intentToCollectionActivity)
+                val intentToScheduleCollectionActivity = Intent(this@HomeActivity, ScheduleCollectionActivity::class.java)
+                startActivity(intentToScheduleCollectionActivity)
             }
             R.id.itemProfile -> {
 

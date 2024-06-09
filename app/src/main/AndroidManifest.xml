@@ -16,19 +16,24 @@
         android:theme="@style/Theme.Pdm"
         tools:targetApi="31">
         <activity
+            android:name=".viewModel.UpdateCollectionActivity"
+            android:exported="false"
+            android:label="@string/update_collection_activity_title"
+            android:parentActivityName=".viewModel.HistoryActivity" />
+        <activity
             android:name=".viewModel.HistoryActivity"
             android:exported="false"
             android:label="@string/history_activity_title"
-            android:parentActivityName=".viewModel.CollectionActivity"></activity>
+            android:parentActivityName=".viewModel.ScheduleCollectionActivity" />
         <activity
-            android:name=".viewModel.CollectionActivity"
+            android:name=".viewModel.ScheduleCollectionActivity"
             android:exported="true"
             android:label="@string/collection_activity_title"
-            android:parentActivityName=".viewModel.HomeActivity"></activity>
+            android:parentActivityName=".viewModel.HomeActivity" />
         <activity
             android:name=".viewModel.CalendarActivity"
             android:exported="true"
-            android:parentActivityName=".viewModel.HomeActivity"></activity>
+            android:parentActivityName=".viewModel.HomeActivity" />
         <activity
             android:name=".viewModel.HomeActivity"
             android:exported="false"

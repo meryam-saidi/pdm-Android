@@ -1,9 +1,5 @@
-package tn.esprit.pdm.viewModel
+package tn.esprit.pdm.adapter
 
-import android.content.ClipDescription
-import android.content.Context
-import android.icu.text.CaseMap.Title
-import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +8,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import tn.esprit.pdm.R
-import java.util.Locale
+import tn.esprit.pdm.network.model.Post
 
 class PostsAdapter(var items: List<Post>) : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
 

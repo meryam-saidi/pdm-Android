@@ -3,6 +3,8 @@
     <string name="home_activity_title">Home</string>
     <string name="collection_activity_title">Schedule Collection</string>
     <string name="history_activity_title">History of collections</string>
+    <string name="update_collection_activity_title">Update collection</string>
+
 
 
 </resources>

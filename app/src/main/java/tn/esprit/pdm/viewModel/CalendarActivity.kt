@@ -16,6 +16,8 @@ import retrofit2.Response
 import tn.esprit.pdm.R
 import tn.esprit.pdm.network.RetrofitClient
 import tn.esprit.pdm.network.UserApiService
+import tn.esprit.pdm.network.model.Collection
+import tn.esprit.pdm.network.model.Post
 import java.util.Calendar
 import java.util.Locale
 
@@ -36,7 +38,7 @@ class CalendarActivity : AppCompatActivity() {
 
         calendarView = findViewById(R.id.calendarView)
         btnSchedule = findViewById(R.id.btnSchedule)
-        btnCancel = findViewById(R.id.btnCancel)
+        btnCancel = findViewById(R.id.btnDelete)
         commentView = findViewById(R.id.etComment)
         spinnerPostTitles = findViewById(R.id.spinnerPostTitles)
         postTitles()

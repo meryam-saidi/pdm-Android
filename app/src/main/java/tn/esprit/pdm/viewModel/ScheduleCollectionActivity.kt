@@ -17,8 +17,12 @@ import retrofit2.Response
 import tn.esprit.pdm.R
 import tn.esprit.pdm.network.RetrofitClient
 import tn.esprit.pdm.network.UserApiService
+import tn.esprit.pdm.network.model.Collection
+import tn.esprit.pdm.network.model.Post
+import tn.esprit.pdm.network.model.SurplusFoodItem
+import java.util.UUID
 
-class CollectionActivity : AppCompatActivity() {
+class ScheduleCollectionActivity : AppCompatActivity() {
     private lateinit var apiService: UserApiService
     private lateinit var datePickerStart: DatePicker
     private lateinit var datePickerEnd: DatePicker
@@ -26,16 +30,17 @@ class CollectionActivity : AppCompatActivity() {
     private lateinit var btnCancel: Button
     private lateinit var spinnerPostTitles: Spinner
     private lateinit var commentView: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_collection)
+        setContentView(R.layout.activity_schedule_collection)
 
         apiService = RetrofitClient.getClient("http://10.0.2.2:7002/").create(UserApiService::class.java)
 
         datePickerStart = findViewById(R.id.datePickerStart)
         datePickerEnd = findViewById(R.id.datePickerEnd)
         btnSchedule = findViewById(R.id.btnSchedule)
-        btnCancel = findViewById(R.id.btnCancel)
+        btnCancel = findViewById(R.id.btnDelete)
         spinnerPostTitles = findViewById(R.id.spinnerPostTitles)
         commentView = findViewById(R.id.etComment)
         postTitles()
@@ -51,7 +56,7 @@ class CollectionActivity : AppCompatActivity() {
         }
 
         btnCancel.setOnClickListener {
-            val intentToHomeActivity = Intent(this@CollectionActivity, HomeActivity::class.java)
+            val intentToHomeActivity = Intent(this@ScheduleCollectionActivity, HomeActivity::class.java)
             startActivity(intentToHomeActivity)
         }
     }
@@ -64,12 +69,12 @@ class CollectionActivity : AppCompatActivity() {
                         updateSpinnerWithPostTitles(posts)
                     }
                 } else {
-                    Toast.makeText(this@CollectionActivity, "Error: ${response.message()}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ScheduleCollectionActivity, "Error: ${response.message()}", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<List<Post>>, t: Throwable) {
-                Toast.makeText(this@CollectionActivity, "Failure: ${t.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@ScheduleCollectionActivity, "Failure: ${t.message}", Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -93,14 +98,16 @@ class CollectionActivity : AppCompatActivity() {
 
             // Assuming requestorId is obtained securely from user session or similar
             val requestorId = "6660c1783c9663264f09e91a"
-
+            //UUID.randomUUID().toString()
             val newCollection = Collection(
+                id = UUID.randomUUID().toString(),
                 foodType = foodType,
                 requestorId = requestorId,
                 startDate = startDate,
                 endDate = endDate,
                 comment = comment
             )
+
 
             createCollection(newCollection)
         } else {
@@ -114,14 +121,14 @@ class CollectionActivity : AppCompatActivity() {
         apiService.createCollection(collection).enqueue(object : Callback<Collection> {
             override fun onResponse(call: Call<Collection>, response: Response<Collection>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(this@CollectionActivity, "Collection scheduled successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ScheduleCollectionActivity, "Collection scheduled successfully", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this@CollectionActivity, "Failed to schedule collection: ${response.errorBody()?.string()}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ScheduleCollectionActivity, "Failed to schedule collection: ${response.errorBody()?.string()}", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<Collection>, t: Throwable) {
-                Toast.makeText(this@CollectionActivity, "Error: ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@ScheduleCollectionActivity, "Error: ${t.localizedMessage}", Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -134,8 +141,8 @@ class CollectionActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.historyItem -> {
-                val intentToCollectionActivity = Intent(this@CollectionActivity, HistoryActivity::class.java)
-                startActivity(intentToCollectionActivity)
+                val intentToScheduleCollectionActivity = Intent(this@ScheduleCollectionActivity, HistoryActivity::class.java)
+                startActivity(intentToScheduleCollectionActivity)
             }
         }
         return super.onOptionsItemSelected(item)
