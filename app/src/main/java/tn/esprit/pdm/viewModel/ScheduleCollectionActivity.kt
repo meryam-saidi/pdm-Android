@@ -100,7 +100,7 @@ class ScheduleCollectionActivity : AppCompatActivity() {
             val requestorId = "6660c1783c9663264f09e91a"
             //UUID.randomUUID().toString()
             val newCollection = Collection(
-                id = UUID.randomUUID().toString(),
+                _id = "",
                 foodType = foodType,
                 requestorId = requestorId,
                 startDate = startDate,

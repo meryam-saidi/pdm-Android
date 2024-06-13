@@ -62,11 +62,11 @@
                 android:alpha="0.7"
                 android:textStyle="bold"/>
 
-            <EditText
-                android:id="@+id/tvUpdateFoodType"
+            <Spinner
+                android:id="@+id/spinnerTitles"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
                 android:id="@+id/tvCollectionId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="success or fail msg appears here"
+                tools:text="collectionId appears here"
                 android:layout_gravity="center"
                 android:alpha="0.7"
                 android:textStyle="bold"/>

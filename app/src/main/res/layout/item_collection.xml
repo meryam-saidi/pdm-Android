@@ -120,6 +120,17 @@
             android:textColor="@color/white"
             tools:text="comment left" />
 
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tvCollectionTitle"
+            android:layout_marginBottom="3dp"
+            tools:text="id"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
